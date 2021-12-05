@@ -34,7 +34,7 @@
         {{ $slot }}
     </main>
 
-    <footer>
+    <footer class="pb-5">
         <div class="grid grid-cols-5 gap-12 w-10/12 m-auto">
             <div>
                 <h1 class="text-2xl fonst-bold pb-3"><a href="/">Obay</a></h1>
