@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class layouts extends Component
+class flashMessage extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class layouts extends Component
      */
     public function render()
     {
-        return view('components.layouts');
+        return view('components.flash-message');
     }
 }

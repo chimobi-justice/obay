@@ -15,7 +15,7 @@
         <h1 class="text-4xl fonst-bold m-2"><a href="/">Obay</a></h1>
 
         <ul class="inline-flex p-3">
-            <li class="m-2"><a href="" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('/') ? 'text-red-500 hover:text-red-500' : '' }}">Why Obay?</a></li>
+            <li class="m-2"><a href="/" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('/') ? 'text-red-500 hover:text-red-500' : '' }}">Why Obay?</a></li>
             <li class="m-2"><a href="" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('services') ? 'text-blue-500 hover:text-red-500' : '' }}">Services</a></li>
             <li class="m-2"><a href="" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('our-menu') ? 'text-blue-500 hover:text-red-500' : '' }}">Menu</a></li>
             <li class="m-2"><a href="" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('contact-us') ? 'text-blue-500 hover:text-red-500' : '' }}">Contact</a></li>
@@ -25,7 +25,10 @@
             <li class="m-2"><a href=""><img src="{{ asset('images/search.png') }}" alt="" class="pr-2 icon w-7"></a></li>
             <li class="m-2"><a href=""><img src="{{ asset('images/c.png') }}" alt="" class="pr-2 icon w-7"></a></li>
             <li class="m-2">
-                <x-form.button><img src="{{ asset('images/login.png') }}" alt="" class="icon w-5 pr-2"> login</x-form.button>
+                <a href="{{ route('login') }}" class="flex bg-red-500 uppercase font-semibold text-xs text-white py-2 px-5 rounded-lg hover:bg-red-600">
+                    <img src="{{ asset('images/user-login.png') }}" alt="" class="icon w-5 pr-2"> 
+                    login
+                </a>
             </li>
         </ul>
     </nav>

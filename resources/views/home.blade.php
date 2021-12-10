@@ -9,7 +9,7 @@
         </x-field>
       </div>
       <div class="w-9/12 ml-2">
-        <img src="{{ asset('images/hero-man.jpeg') }}" alt="" class="w-full">
+        <img src="{{ asset('images/hero.svg') }}" alt="" class="w-full">
       </div>
     </div>
   </section>

@@ -4,7 +4,7 @@ namespace App\View\Components\form;
 
 use Illuminate\View\Component;
 
-class Button extends Component
+class button extends Component
 {
     /**
      * Create a new component instance.
