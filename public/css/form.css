@@ -1,0 +1,22 @@
+main {
+    height: 100vh;
+}
+#form-container {
+    display: flex;
+}
+#form-container > div {
+    width: 50%;
+}
+#form-container > div img {
+    width: 100%;
+    height: 100vh;
+}
+.form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form-wrapper > div {
+    width: 65%;
+    margin: 4rem auto;
+}
