@@ -9,6 +9,7 @@
     <meta name="author" content="Justice Chimobi">
     <title>Obay</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 <body class="bg-pink-50">
     <nav class="flex justify-around items-center p-3 pt-3">
@@ -16,9 +17,9 @@
 
         <ul class="inline-flex p-3">
             <li class="m-2"><a href="/" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('/') ? 'text-red-500 hover:text-red-500' : '' }}">Why Obay?</a></li>
-            <li class="m-2"><a href="" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('services') ? 'text-blue-500 hover:text-red-500' : '' }}">Services</a></li>
-            <li class="m-2"><a href="" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('our-menu') ? 'text-blue-500 hover:text-red-500' : '' }}">Menu</a></li>
-            <li class="m-2"><a href="" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('contact-us') ? 'text-blue-500 hover:text-red-500' : '' }}">Contact</a></li>
+            <li class="m-2"><a href="" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('services') ? 'text-red-500 hover:text-red-500' : '' }}">Services</a></li>
+            <li class="m-2"><a href="/our-menu" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('our-menu') ? 'text-red-500 hover:text-red-500' : '' }}">Menu</a></li>
+            <li class="m-2"><a href="" class="p-3 text-gray-500 hover:text-gray-600 {{ request()->is('contact-us') ? 'text-red-500 hover:text-red-500' : '' }}">Contact</a></li>
         </ul>
 
         <ul class="inline-flex p-3 items-center">

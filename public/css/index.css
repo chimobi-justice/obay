@@ -1,0 +1,21 @@
+#food-herosection-bg {
+    background-image: linear-gradient(#000000a6, #000000a6),
+        url("../images/food-bg.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+#food-herosection-bg > div {
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-img-holder {
+    width: 40%;
+}
