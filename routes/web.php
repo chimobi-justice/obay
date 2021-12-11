@@ -25,19 +25,13 @@ Route::get('/', function () {
 Route::get('/our-menu', [MenuListView::class, 'index']);
 Route::get('/food/details/{id}', [MenuListDetails::class, 'index']);
 
-Route::get('/register', [RegisterController::class, 'create'])->name('register')->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store']);
+Route::group(['middleware' => 'guest'], function() {
+    Route::get('/register', [RegisterController::class, 'create'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store']);
     
-Route::get('/login', [SessionController::class, 'create'])->name('login')->middleware('guest');
-Route::post('/login', [SessionController::class, 'store']);
-
-// Route::group(['middleware' => 'guest'], function() {
-    // Route::get('/register', [RegisterController::class, 'create'])->name('register');
-    // Route::post('/register', [RegisterController::class, 'store']);
-    
-    // Route::get('/login', [SessionController::class, 'create'])->name('login');
-    // Route::post('/login', [SessionController::class, 'store']);
-// });
+    Route::get('/login', [SessionController::class, 'create'])->name('login');
+    Route::post('/login', [SessionController::class, 'store']);
+});
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
