@@ -32,43 +32,7 @@
       <h2 class="leading-7 mb-2 text-lg text-gray-600 font-semibold">PUPORLAR MENU</h2>
     </div>
   
-    <div class="w-10/12 m-auto grid grid-cols-4 gap-4">
-      <div class="text-center border border-gray-300 bg-white">
-        <img src="{{ asset('images/pizza.jpeg') }}" alt="">
-        <h2 class="leading-7 mb-2 text-sm text-gray-600 font-bold">TACO CLUB BERRITO</h2>
-        <h3 class="leading-7 mb-2 text-2xl"><span class="text-gray-500 font-extralight not-italic">$40</span> <span class="text-red-500 font-semibold italic">$30</span></h3>
-        <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, dicta.</p>
-        <div class="w-2/4 m-auto mb-2">
-          <x-form.button>Add To Cart</x-form.button>
-        </div>
-      </div>
-      <div class="text-center border border-gray-300 bg-white">
-        <img src="{{ asset('images/pizza.jpeg') }}" alt="">
-        <h2 class="leading-7 mb-2 text-sm text-gray-600 font-bold">TACO CLUB BERRITO</h2>
-        <h3 class="leading-7 mb-2 text-2xl"><span class="text-gray-500 font-extralight not-italic">$40</span> <span class="text-red-500 font-semibold italic">$30</span></h3>
-        <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, dicta.</p>
-        <div class="w-2/4 m-auto mb-2">
-          <x-form.button>Add To Cart</x-form.button>
-        </div>
-      </div>
-      <div class="text-center border border-gray-300 bg-white">
-        <img src="{{ asset('images/pizza.jpeg') }}" alt="">
-        <h2 class="leading-7 mb-2 text-sm text-gray-600 font-bold">TACO CLUB BERRITO</h2>
-        <h3 class="leading-7 mb-2 text-2xl"><span class="text-gray-500 font-extralight not-italic">$40</span> <span class="text-red-500 font-semibold italic">$30</span></h3>
-        <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, dicta.</p>
-        <div class="w-2/4 m-auto mb-2">
-          <x-form.button>Add To Cart</x-form.button>
-        </div>
-      </div>
-      <div class="text-center border border-gray-300 bg-white">
-        <img src="{{ asset('images/pizza.jpeg') }}" alt="">
-        <h2 class="leading-7 mb-2 text-sm text-gray-600 font-bold">TACO CLUB BERRITO</h2>
-        <h3 class="leading-7 mb-2 text-2xl"><span class="text-gray-500 font-extralight not-italic">$40</span> <span class="text-red-500 font-semibold italic">$30</span></h3>
-        <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, dicta.</p>
-        <div class="w-2/4 m-auto mb-2">
-          <x-form.button>Add To Cart</x-form.button>
-        </div>
-      </div>
-    </div>
+    <x-popular-food-menu></x-popular-food-menu>
+    
   </section>
 </x-layout>
