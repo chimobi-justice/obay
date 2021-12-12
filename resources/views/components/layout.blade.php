@@ -10,7 +10,6 @@
     <title>Obay</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/tab.css') }}">
 </head>
 <body class="bg-pink-50">
     <nav class="flex justify-around items-center p-3 pt-3">
@@ -85,7 +84,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="{{ asset('js/tab.js') }}"></script>
 </body>
 </html>

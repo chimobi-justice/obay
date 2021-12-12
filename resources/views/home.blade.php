@@ -58,8 +58,8 @@
         </div>
         <div class="flex justify-around w-3/4 ml-2">
           <div class="leading-10">
-            <h2 class="text-2xl text-gray-300 font-bold mb-2">Spicy beef burger</h2>
-            <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+            <h2 class="text-2xl text-gray-200 font-bold mb-2">Spicy beef burger</h2>
+            <p class="leading-7 text-sm text-gray-300 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
           </div>
           <div>
             <h3 class="text-3xl text-red-500 uppercase font-semibold italic">$30</h3>
@@ -73,8 +73,8 @@
         </div>
         <div class="flex justify-around w-3/4 ml-2 ">
           <div class="leading-10">
-            <h2 class="text-2xl text-gray-300 font-bold mb-2">Spicy beef burger</h2>
-            <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+            <h2 class="text-2xl text-gray-200 font-bold mb-2">Spicy beef burger</h2>
+            <p class="leading-7 text-sm text-gray-300 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
           </div>
           <div>
             <h3 class="text-3xl text-red-500 uppercase font-semibold italic">$30</h3>
@@ -88,8 +88,8 @@
         </div>
         <div class="flex justify-around w-3/4 ml-2 ">
           <div class="leading-10">
-            <h2 class="text-2xl text-gray-300 font-bold mb-2">Spicy beef burger</h2>
-            <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+            <h2 class="text-2xl text-gray-200 font-bold mb-2">Spicy beef burger</h2>
+            <p class="leading-7 text-sm text-gray-300 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
           </div>
           <div>
             <h3 class="text-3xl text-red-500 uppercase font-semibold italic">$30</h3>
@@ -103,8 +103,8 @@
         </div>
         <div class="flex justify-around w-3/4 ml-2">
           <div class="leading-10">
-            <h2 class="text-2xl text-gray-300 font-bold mb-2">Spicy beef burger</h2>
-            <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+            <h2 class="text-2xl text-gray-200 font-bold mb-2">Spicy beef burger</h2>
+            <p class="leading-7 text-sm text-gray-300 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
           </div>
           <div>
             <h3 class="text-3xl text-red-500 uppercase font-semibold italic">$30</h3>
@@ -118,8 +118,8 @@
         </div>
         <div class="flex justify-around w-3/4 ml-2 ">
           <div class="leading-10">
-            <h2 class="text-2xl text-gray-300 font-bold mb-2">Spicy beef burger</h2>
-            <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+            <h2 class="text-2xl text-gray-200 font-bold mb-2">Spicy beef burger</h2>
+            <p class="leading-7 text-sm text-gray-300 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
           </div>
           <div>
             <h3 class="text-3xl text-red-500 uppercase font-semibold italic">$30</h3>
@@ -133,8 +133,8 @@
         </div>
         <div class="flex justify-around w-3/4 ml-2">
           <div class="leading-10">
-            <h2 class="text-2xl text-gray-300 font-bold mb-2">Spicy beef burger</h2>
-            <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+            <h2 class="text-2xl text-gray-200 font-bold mb-2">Spicy beef burger</h2>
+            <p class="leading-7 text-sm text-gray-300 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
           </div>
           <div>
             <h3 class="text-3xl text-red-500 uppercase font-semibold italic">$30</h3>
