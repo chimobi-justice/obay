@@ -1,0 +1,16 @@
+.show-all {
+    display: block;
+}
+.show-breakfast {
+    display: none;
+}
+
+.active {
+    background: red;
+    color: #fff;
+    border: 1px solid red;
+}
+
+.content {
+    display: none;
+}

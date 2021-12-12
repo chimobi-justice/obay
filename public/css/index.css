@@ -16,6 +16,36 @@
     transform: translate(-50%, -50%);
 }
 
+.food-holder-card:hover {
+    transform: translateY(-3px);
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
 .menu-img-holder {
     width: 40%;
+}
+
+.category-card:hover {
+    transform: scale(1.1);
+}
+.category-card > a > p {
+    text-align: center;
+    color: #fff;
+    background: green;
+    width: 50%;
+    padding: 10px;
+    position: relative;
+    bottom: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#special-menu-container {
+    background-image: linear-gradient(#000000de, #000000cf),
+        url("../images/food-bg.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
 }
