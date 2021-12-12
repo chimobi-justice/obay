@@ -50,7 +50,7 @@
   <div class="w-10/12 m-auto">
     <h2 class="leading-7 mb-5 text-2xl text-gray-600 font-semibold">Restaurant with Special Meals</h2>
   </div>
-  <section id="special-menu-container" class="w-10/12 m-auto mb-10 mt-5">
+  <section id="special-menu-container" class="m-auto mb-10 mt-5">
     <div class="grid grid-cols-2 gap-3 p-3 pt-5 tab-conten" id="show-all">
       <div class="flex w-10/12 m-auto items-center mb-4">
         <div class="w-1/4 menu-img-holder">
