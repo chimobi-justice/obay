@@ -15,7 +15,11 @@
           <p class="leading-7 text-sm text-gray-400 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est sit, officia illo illum deleniti rerum ipsam excepturi dicta corporis minima?</p>
 
           <h4 class="text-gray-400 mb-2">Food Type: Taco</h4>
-          <x-form.button>Add To Cart</x-form.button>
+          <form action="">
+            @csrf
+            
+            <x-form.button>Add To Cart</x-form.button>
+          </form>
         </div>
       </div>
 

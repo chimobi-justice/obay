@@ -24,14 +24,13 @@ class sessionController extends Controller
 
         session()->regenerate();
 
-        return redirect()->route(RouteServiceProvider::DASHBOARD)->with('status', 'Welcome back');
-
+        return redirect()->route(RouteServiceProvider::C_DASHBOARD)->with('status', 'Welcome back');
     }
 
     public function destroy()
     {
         auth()->logout();
 
-        return redirect(RouteServiceProvider::LOGIN);
+        return redirect(RouteServiceProvider::LOGIN)->with('status', 'Loged out Successfully');
     }
 }

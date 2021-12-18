@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\sessionController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\C\DashboardController;
 use App\Http\Controllers\MenuListView;
 use App\Http\Controllers\MenuListDetails;
 
@@ -33,5 +33,6 @@ Route::group(['middleware' => 'guest'], function() {
     Route::post('/login', [sessionController::class, 'store']);
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::post('/logout', [sessionController::class, 'destroy'])->name('logout')->middleware('auth');
+Route::get('/c/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
