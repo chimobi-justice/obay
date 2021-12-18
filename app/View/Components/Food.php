@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class popularFoodMenu extends Component
+class Food extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class popularFoodMenu extends Component
      */
     public function render()
     {
-        return view('components.popular-food-menu');
+        return view('components.food');
     }
 }

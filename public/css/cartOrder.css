@@ -1,0 +1,9 @@
+.cartModal {
+    display: none;
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    z-index: 1;
+}

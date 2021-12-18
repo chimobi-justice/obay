@@ -1,11 +1,4 @@
-<x-layout>
-  <x-flash-message />
-
-  <x-food-background>
-    MENU DETAILS
-  </x-food-background>
-
-  <section class="pt-10 pb-16">
+<section class="pt-10 pb-16">
     <div class="details-section">
       <div class="flex justify-around w-10/12 m-auto pt-5 pb-5">
         <div>
@@ -15,17 +8,16 @@
           <h2 class="leading-7 mb-2 text-2xl text-gray-600 font-bold">{{ Str::limit($food->title, 40 ) }}</h2>
           <h3 class="leading-7 mb-2 text-2xl">
             <span class="text-gray-500 font-extralight not-italic">
-              ${{ $food->old_price }}
+              {{ $food->old_price }}
             </span> 
             <span class="text-red-500 font-semibold italic">
-              ${{ $food->old_price }}
+              {{ $food->old_price }}
             </span>
           </h3>
           <p class="leading-7 text-sm text-gray-400 mb-2">{{ Str::limit($food->description, 100) }}</h4>
           @if($cart->where('id', $food->id )->count())
-            <form action="{{ route('cart.remove') }}" method="POST">
+            <form action="." method="POST">
             @csrf
-            @method('DELETE')
             
             <x-form.button>Remove from cart</x-form.button>
           </form>
@@ -51,5 +43,5 @@
     <div class="w-10/12 m-auto">
       <h2 class="leading-7 mb-2 text-lg text-gray-600 font-semibold">PUPORLAR MENU</h2>
     </div>
+    
   </section>
-</x-layout>

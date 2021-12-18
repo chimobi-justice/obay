@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Food;
 
-class MenuListView extends Controller
+class IndexController extends Controller
 {
     public function index()
-    {    
-        $foods = Food::paginate(40);
+    { 
+       $foods = Food::paginate(20);
 
-        return view('menu.index', [
+       return view('home', [
             'foods' => $foods
         ]);
     }
