@@ -2,6 +2,8 @@
   <x-food-background>
     MENU LIST VIEW
   </x-food-background>
+
+  
   <section id="menulist-view-container" class="pt-10 pb-10">
     <div class="flex w-10/12 m-auto items-center border border-gray-300 bg-white mb-4">
       <div class="w-1/4 menu-img-holder">

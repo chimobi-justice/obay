@@ -10,6 +10,8 @@
   </head>
   <body>
     <main>
+    <x-flash-message />
+
       <section id="form-container"> 
         <div class="">
           <img src="{{ asset('images/login.jpg') }}" alt="register image">
@@ -46,6 +48,8 @@
         </div>
       </section>
     </main>
+
+    <script src="{{ asset('js/index.js') }}"></script>
   </body>
 </html>
 
