@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\sessionController;
 use App\Http\Controllers\C\DashboardController;
 use App\Http\Controllers\MenuListView;
 use App\Http\Controllers\MenuListDetails;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,21 +20,20 @@ use App\Http\Controllers\MenuListDetails;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [IndexController::class, 'index']);
 
 Route::get('/our-menu', [MenuListView::class, 'index']);
-Route::get('/food/details/{id}', [MenuListDetails::class, 'index']);
+Route::get('/food/details/{id}', [MenuListDetails::class, 'show'])->name('food.details');
+Route::delete('/food/cart/remove', [MenuListDetails::class, 'removeCart'])->name('cart.remove');
+
+Route::post('/food/details/{id}', [CartController::class, 'store'])->name('cart.store');
 
 Route::group(['middleware' => 'guest'], function() {
     Route::get('/register', [RegisterController::class, 'create'])->name('register');
     Route::post('/register', [RegisterController::class, 'store']);
-    
     Route::get('/login', [sessionController::class, 'create'])->name('login');
     Route::post('/login', [sessionController::class, 'store']);
 });
 
 Route::post('/logout', [sessionController::class, 'destroy'])->name('logout')->middleware('auth');
-Route::get('/c/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
-
+Route::get('/c/dashboard', [DashboardController::class, 'index'])->name('c.dashboard')->middleware('auth');

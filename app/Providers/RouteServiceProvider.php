@@ -19,7 +19,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/';
 
-    public const C_DASHBOARD = 'c\dashboard';
+    public const C_DASHBOARD = 'c.dashboard';
 
     public const LOGIN = 'login';
 

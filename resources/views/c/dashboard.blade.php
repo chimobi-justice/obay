@@ -13,15 +13,7 @@
       <h2 class="leading-7 mb-5 text-2xl text-gray-600 font-semibold">All Our Special Meals</h2>
     </div>
     <div class="mb-10">
-      <x-popular-food-menu></x-popular-food-menu>
-      <x-popular-food-menu></x-popular-food-menu>  
-      <x-popular-food-menu></x-popular-food-menu>  
-      <x-popular-food-menu></x-popular-food-menu>  
-      <x-popular-food-menu></x-popular-food-menu>  
-      <x-popular-food-menu></x-popular-food-menu>  
-      <x-popular-food-menu></x-popular-food-menu>  
-      <x-popular-food-menu></x-popular-food-menu>  
-      <x-popular-food-menu></x-popular-food-menu>  
+      
     </div>
   </div>
 
