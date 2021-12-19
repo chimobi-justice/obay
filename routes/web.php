@@ -5,6 +5,13 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\sessionController;
 use App\Http\Controllers\C\DashboardController;
+use App\Http\Controllers\C\AccountController;
+use App\Http\Controllers\C\Meals\BurgerController;
+use App\Http\Controllers\C\Meals\BreadController;
+use App\Http\Controllers\C\Meals\BunController;
+use App\Http\Controllers\C\Meals\FrenchFriesController;
+use App\Http\Controllers\C\Meals\RiceController;
+use App\Http\Controllers\C\Meals\PizzaController;
 use App\Http\Controllers\MenuListView;
 use App\Http\Controllers\MenuListDetails;
 use App\Http\Controllers\CartController;
@@ -45,4 +52,26 @@ Route::group(['middleware' => 'guest'], function() {
 });
 
 Route::post('/logout', [sessionController::class, 'destroy'])->name('logout')->middleware('auth');
-Route::get('/c/dashboard', [DashboardController::class, 'index'])->name('c.dashboard')->middleware('auth');
+
+// routes for customer
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/c/dashboard', [DashboardController::class, 'index'])->name('c.dashboard');
+    Route::get('/c/dashboard/cart', [DashboardController::class, 'cart'])->name('c.dashboard.cart');
+    Route::get('/c/dashboard/food/details/{id}', [DashboardController::class, 'show'])->name('c.dashboard.food.details');
+    Route::post('/c/dashboard/food/details/{id}', [DashboardController::class, 'store'])->name('c.dashboard.cart.store');
+    Route::delete('/c/dashboard/cart/{id}', [DashboardController::class, 'destroy'])->name('c.dashboard.cart.remove');
+    Route::delete('/c/dashboard/empty/cart', [DashboardController::class, 'empty'])->name('c.dashboard.cart.empty');
+    
+    Route::get('/c/dashboard/meals/burgers', [BurgerController::class, 'index'])->name('c.dashboard.meals.burger');
+    Route::get('/c/dashboard/meals/bun', [BunController::class, 'index'])->name('c.dashboard.meals.bun');
+    Route::get('/c/dashboard/meals/breads', [BreadController::class, 'index'])->name('c.dashboard.meals.bread');
+    Route::get('/c/dashboard/meals/rice', [RiceController::class, 'index'])->name('c.dashboard.meals.rice');
+    Route::get('/c/dashboard/meals/french-fries', [FrenchFriesController::class, 'index'])->name('c.dashboard.meals.french-fries');
+    Route::get('/c/dashboard/meals/pizzas', [PizzaController::class, 'index'])->name('c.dashboard.meals.pizzas');
+    
+    Route::get('/c/dashboard/account', [AccountController::class, 'index'])->name('c.dashboard.account');
+    Route::put('/c/dashboard/account', [AccountController::class, 'store']);
+    Route::delete('/c/dashboard/account', [AccountController::class, 'destroy'])->name('c.dashboard.account.destroy');
+    Route::put('/c/dashboard/account', [AccountController::class, 'updateSettings'])->name('c.dashboard.account.settings');
+});
+// end routes for customer

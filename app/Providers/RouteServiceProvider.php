@@ -21,6 +21,8 @@ class RouteServiceProvider extends ServiceProvider
 
     public const C_DASHBOARD = 'c.dashboard';
 
+    public const C_DASHBOARD_ACCOUNT = 'c.dashboard.account';
+
     public const LOGIN = 'login';
 
 
