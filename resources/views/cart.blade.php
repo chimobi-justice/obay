@@ -27,7 +27,7 @@
               <div class="flex justify-around">
                 <div>
                   <label for="quantity" class="text-gray-500 text-sm">quantity:</label>
-                  <input type="number" name="quantity" value="{{ $cart->qty }}" class="text-sm py-1 px-1 w-10 mb-3">
+                  <input type="number" name="quantity" value="{{ $cart->qty }}" min="0" max="5" class="text-sm py-1 px-1 w-10 mb-3">
                 </div>
                 <p class="text-gray-500 font-semibold">${{ $cart->total() }}</p>
               </div>

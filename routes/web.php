@@ -8,6 +8,9 @@ use App\Http\Controllers\C\DashboardController;
 use App\Http\Controllers\MenuListView;
 use App\Http\Controllers\MenuListDetails;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\Categories\BreakfastController;
+use App\Http\Controllers\Categories\DinnerController;
+use App\Http\Controllers\Categories\LunchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +32,10 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/food/details/{id}', [CartController::class, 'store'])->name('cart.store');
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.remove');
 Route::delete('/empty/cart', [CartController::class, 'empty'])->name('cart.empty');
+
+Route::get('/breakfast', [BreakfastController::class, 'index']);
+Route::get('/dinner', [DinnerController::class, 'index']);
+Route::get('/lunch', [LunchController::class, 'index']);
 
 Route::group(['middleware' => 'guest'], function() {
     Route::get('/register', [RegisterController::class, 'create'])->name('register');
