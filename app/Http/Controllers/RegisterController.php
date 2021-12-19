@@ -26,6 +26,6 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return redirect()->route(RouteServiceProvider::C_DASHBOARD);
+        return redirect()->route(RouteServiceProvider::C_DASHBOARD_ACCOUNT)->with('status', 'Welcome Please continue your profile');
     }
 }
