@@ -24,9 +24,11 @@ Route::get('/', [IndexController::class, 'index']);
 
 Route::get('/our-menu', [MenuListView::class, 'index']);
 Route::get('/food/details/{id}', [MenuListDetails::class, 'show'])->name('food.details');
-Route::delete('/food/cart/remove', [MenuListDetails::class, 'removeCart'])->name('cart.remove');
 
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/food/details/{id}', [CartController::class, 'store'])->name('cart.store');
+Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.remove');
+Route::delete('/empty/cart', [CartController::class, 'empty'])->name('cart.empty');
 
 Route::group(['middleware' => 'guest'], function() {
     Route::get('/register', [RegisterController::class, 'create'])->name('register');

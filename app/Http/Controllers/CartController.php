@@ -8,6 +8,14 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
+    public function index()
+    {
+        $carts = Cart::content();
+
+        return view('cart', [
+            'carts' => $carts
+        ]);
+    }
     public function store(Request $request, $id)
     {
         $food = Food::findOrFail($id);
@@ -21,5 +29,19 @@ class CartController extends Controller
         );
 
         return back()->with('status', 'Added to cart');
+    }
+
+    public function empty()
+    {
+        Cart::destroy();
+        
+        return back()->with('status', 'All items has been delete from cart!');
+    }
+
+    public function destroy($id)
+    {
+        Cart::remove($id);
+
+        return back()->with('status', 'Item has been removed!');
     }
 }

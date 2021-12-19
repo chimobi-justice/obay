@@ -47,7 +47,7 @@
                 </a>
             </li>
             <li class="m-2">
-                <a href="" class="flex" id="clickModalCartOpen">
+                <a href="{{ route('cart') }}" class="flex">
                     <img src="{{ asset('images/c.png') }}" alt="" class="pr-2 icon w-7">
                     <span class="text-sm text-gray-500">
                         @livewire('cart-counter')
@@ -62,57 +62,6 @@
             </li>
         </ul>
     </nav>
-
-    <aside class="cartModal bg-gray-300 p-3" id="cartModal">
-        <div class="flex justify-between items-center mt-2 mb-4">
-            <h1>My Order</h1>
-            <p><a href="" id="closeCartModal" class="hover:text-gray-500">close X</a></p>
-        </div>
-        @if (\Gloudemans\Shoppingcart\Facades\Cart::content()->count())
-            @foreach (\Gloudemans\Shoppingcart\Facades\Cart::content() as $cart)
-                <div>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <img src="{{ asset('images/pizza.jpeg') }}" alt="" class="w-16 rounded-lg">
-                        </div>
-                        <p class="text-gray-600 text-sm ml-1">{{ Str::limit($cart->name, 15) }}</p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-gray-600 text-sm font-bold">{{ $cart->total() }}</p>
-                        <form action="">
-                            <button class="text-red-500">U</button>
-                        </form>
-                    </div>
-                </div>
-            @endforeach
-
-            <div class="mt-2">
-                <div class="flex justify-between mb-2">
-                    <h3 class="text-gray-500 font-bold">Subtotal:</h3>
-                    <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::total()}}</p>
-                </div>
-
-                <div class="flex justify-between mb-2">
-                    <h3 class="text-gray-500 font-bold">Total:</h3>
-                    <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::total()}}</p>
-                </div>
-            </div>
-            
-            @auth
-            <form action="{{ route('c.dashboard') }}" class="mt-5 ">
-                <x-form.button>Order & Checkout</x-form.button>
-            </form>
-            @endauth
-
-            @guest
-                <form action="{{ route('login') }}" class="mt-5 ">
-                    <x-form.button>Order & Checkout</x-form.button>
-                </form>
-            @endguest
-        @else
-            You haven't yet add any cart    
-        @endif
-    </aside>
 
     <main>
         {{ $slot }}
