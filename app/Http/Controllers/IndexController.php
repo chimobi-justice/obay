@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index()
     { 
-       $foods = Food::paginate(20);
+       $foods = Food::latest()->paginate(20);
 
        return view('home', [
             'foods' => $foods

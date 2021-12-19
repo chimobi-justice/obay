@@ -23,12 +23,8 @@
           </h3>
           <p class="leading-7 text-sm text-gray-400 mb-2">{{ Str::limit($food->description, 100) }}</h4>
           @if($cart->where('id', $food->id )->count())
-            <form action="{{ route('cart.remove') }}" method="POST">
-            @csrf
-            @method('DELETE')
-            
-            <x-form.button>Remove from cart</x-form.button>
-          </form>
+            <div class="text-gray-500 text-lg pb-2">Product already exit in cart</div>
+            <a href="{{ route('cart') }}" class="text-red-500 hover:underline">View cart</a>
           @else
           <form action="{{ route('cart.store', $food ) }}" method="POST">
             @csrf

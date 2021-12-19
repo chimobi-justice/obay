@@ -18,15 +18,4 @@ class MenuListDetails extends Controller
             'cart' => $cart
         ]);
     }
-
-    public function removeCart()
-    {
-        $carts = Cart::content();
-
-        foreach ($carts as $cart) {
-            Cart::remove($cart->rowId);
-        }
-
-        return back()->with('status', 'One item remove from cart successfully');
-    }
 }
