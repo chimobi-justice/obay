@@ -14,6 +14,7 @@ class Food extends Model
         'description',
         'food_image',
         'food_type',
+        'food_category',
         'quantity',
         'old_price',
         'new_price'

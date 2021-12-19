@@ -18,6 +18,7 @@ class FoodFactory extends Factory
             'description' => $this->faker->sentence(80),
             'food_image' => public_Path('/images/pizza.jpeg'),
             'food_type' => 'bun',
+            'food_category' => 'breakfast',
             'quantity' => 3,
             'old_price' => 5.99,
             'new_price' => 3.99,
