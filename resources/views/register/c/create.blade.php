@@ -27,10 +27,9 @@
                 <form action="{{ route('register') }}" method="POST">
                   @csrf
 
-                  <x-form.input type="text" name="name" id="name" placeholder="Enter your name" />
-                  <x-form.input type="text" name="username" id="username" placeholder="Enter your username" />
+                  <x-form.input type="text" name="fullname" id="fullname" placeholder="Enter your fullname" />
                   <x-form.input type="email" name="email" id="email" placeholder="Enter your Email" />
-                  <x-form.input type="password" name="password" id="password" placeholder="Choose a password" />
+                  <x-form.input type="password" name="password" id="password_confirmation" placeholder="Choose a password" />
 
                   <div class="flex mt-3 items-center justify-end">
                     <p class="mr-2 text-sm"><a href="{{ route('login') }}" class="hover:underline">Already Registered?</a></p>

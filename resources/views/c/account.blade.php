@@ -1,4 +1,4 @@
-<x-Dashboard.layout>
+<x-c.layout>
   <x-flash-message />
   <section class="profile-form-wrapper">
     <div id="profile-form-wrapper" class="flex justify-around flex-col sm:flex-row p-3 space-x-2 items-start m-auto">
@@ -7,7 +7,7 @@
         <p class="text-gray-500 text-base text-center sm:text-left">Update your account's profile information</p>
       </div>
 
-      <form action="{{ route('c.dashboard.account') }}" method="POST" 
+      <form action="{{ route('c.dashboard.account.store') }}" method="POST" 
         enctype="multipart/form-data" class="p-4 bg-white rounded-lg w-11/12 
         sm:w-2/5 md:w-11/12 lg:w-11/12"
         >
@@ -16,12 +16,9 @@
 
           <x-form.input type="text" name="name" id="name" placeholder="Enter your Name"  value="{{ auth()->user()->name ? auth()->user()->name : old('name') }}" />
           <x-form.input type="email" name="email" id="email" placeholder="Enter your Email"  value="{{ auth()->user()->email }}" disabled />
-
-
           <x-form.input type="text" name="country" id="country" placeholder="Enter your Country"  value="{{ auth()->user()->country ? auth()->user()->country : old('country') }}" />
           <x-form.input type="text" name="state" id="state" placeholder="Enter your State"  value="{{ auth()->user()->state ? auth()->user()->state : old('state') }}" />
           <x-form.input type="text" name="number" id="number" placeholder="Enter phone number"  value="{{ auth()->user()->number ? auth()->user()->number : old('number') }}" />
-
 
           <label for="address" class="mb-2 block text-sm text-gray-500 font-bold">Address</label>
           <textarea name="address" id="" cols="3" rows="5" placeholder="Enter Your address" 
@@ -128,4 +125,4 @@
         </form>
     </div>
   </section>
-</x-Dashboard.layout>
+</x-c.layout>

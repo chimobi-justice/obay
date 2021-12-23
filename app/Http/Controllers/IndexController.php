@@ -7,6 +7,11 @@ use App\Models\Food;
 
 class IndexController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['customerMiddleware', 'merchantMiddleware']);
+    }
+    
     public function index()
     { 
        $foods = Food::latest()->paginate(20);

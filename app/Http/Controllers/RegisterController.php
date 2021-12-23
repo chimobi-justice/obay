@@ -12,16 +12,16 @@ class RegisterController extends Controller
 {
     public function create()
     {
-        return view('register.create');
+        return view('register.c.create');
     }
 
     public function store(CreateUsersRequest $request) 
     {
         $user = User::create([
-            'name' => $request->name,
-            'username' => $request->username,
+            'fullname' => $request->fullname,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'accountType' => false
         ]);
 
         auth()->login($user);

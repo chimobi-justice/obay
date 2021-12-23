@@ -8,6 +8,11 @@ use App\Models\Food;
 
 class BreakfastController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['customerMiddleware', 'merchantMiddleware']);
+    }
+    
     public function index()
     {
         $breakfastMeals = Food::where('food_category', 'breakfast')->paginate(40);

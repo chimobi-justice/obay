@@ -1,4 +1,4 @@
-<x-Dashboard.layout>
+<x-c.layout>
 <div class="text-center mt-10 mb-10 pb-5 pt-5">
     <div class="mb-10">
       @if ($mealsPizza->count())
@@ -9,7 +9,7 @@
                 <a href="{{ route('c.dashboard.food.details', $meal->id ) }}">
                   <img src="{{ asset('images/pizza.jpeg') }}" alt="" class="rounded-lg">
                   <div class="p-1">
-                    <h2 class="leading-5 mb-1 text-sm text-gray-500 font-semibold">{{ Str::limit($meal->title, 20) }}</h2>
+                    <h2 class="leading-5 mb-1 text-sm text-gray-500 font-semibold">{{ Str::limit($meal->name, 20) }}</h2>
                     <p class="text-sm text-gray-500">15 min</p>
                     <p class="text-xs text-gray-500">{{ $meal->new_price }} free delivery</p>
                   </div>    
@@ -31,4 +31,4 @@
     </div>
   </div>
 
-</x-Dashboard.layout>
+</x-c.layout>

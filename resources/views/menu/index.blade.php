@@ -13,8 +13,8 @@
           </div>
           <div class="flex justify-around w-3/4 p-10">
             <div class="leading-10">
-              <h2 class="text-2xl text-gray-600 font-bold mb-2">{{ Str::limit($food->title, 50) }}</h2>
-              <p class="leading-7 text-sm text-gray-400 mb-2">{{ Str::limit($food->title, 110) }}</p>
+              <h2 class="text-2xl text-gray-600 font-bold mb-2">{{ Str::limit($food->name, 50) }}</h2>
+              <p class="leading-7 text-sm text-gray-400 mb-2">{{ Str::limit($food->food_description, 110) }}</p>
               <x-form.button>Order Now</x-form.button>
             </div>
             <div>

@@ -8,9 +8,14 @@ use App\Models\Food;
 
 class DinnerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['customerMiddleware', 'merchantMiddleware']);
+    }
+    
     public function index()
     {
-        $dinnerMeals = Food::where('food_category', 'dinner')->get();
+        $dinnerMeals = Food::where('food_category', 'dinner')->paginate(40);
         return view('category.Dinner', [
             'dinnerMeals' => $dinnerMeals
         ]);
