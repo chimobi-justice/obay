@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\Dashboard;
+namespace App\View\Components\form;
 
 use Illuminate\View\Component;
 
-class layout extends Component
+class anchor extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class layout extends Component
      */
     public function render()
     {
-        return view('components.dashboard.layout');
+        return view('components.form.anchor');
     }
 }

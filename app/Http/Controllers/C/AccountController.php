@@ -22,7 +22,14 @@ class AccountController extends Controller
             'address' => 'required',
         ]);
 
-        auth()->user()->update($request->all());
+        auth()->user()->update([
+            'name' => $request->name,
+            'email' => auth()->user()->email,
+            'country' => $request->country,
+            'state' => $request->state,
+            'number' => $request->number,
+            'address' => $request->address,
+        ]);
 
         return back()->with('status', 'Profile updated successfully');
     }

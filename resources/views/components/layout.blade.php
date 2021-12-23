@@ -10,7 +10,6 @@
     <title>Obay</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/cartOrder.css') }}">
     @livewireStyles
 </head>
 <body class="bg-pink-50">
@@ -94,7 +93,7 @@
             <div>
                 <h2 class="pb-3 text-lg">Support</h2>
                 <ul>
-                    <li><a href="" class="text-sm text-gray-500 hover:text-gray-600">Account</a></li>
+                    <li><a href="{{ route('register.signup') }}" class="text-sm text-gray-500 hover:text-gray-600">Become a merchant</a></li>
                     <li><a href="" class="text-sm text-gray-500 hover:text-gray-600">Support Center</a></li>
                     <li><a href="" class="text-sm text-gray-500 hover:text-gray-600">Feedback</a></li>
                     <li><a href="" class="text-sm text-gray-500 hover:text-gray-600">Contact Us</a></li> 
@@ -115,7 +114,5 @@
     </footer>
 
     @livewireScripts
-
-    <script src="{{ asset('js/cartOrder.js')}}"></script>
 </body>
 </html>

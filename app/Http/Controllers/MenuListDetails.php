@@ -8,9 +8,15 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class MenuListDetails extends Controller
 {
-    public function show($id)
+    public function __construct()
+    {
+        $this->middleware(['customerMiddleware', 'merchantMiddleware']);
+    }
+    
+    public function show($id, $slug)
     {
         $food = Food::findOrFail($id);
+
         $cart = Cart::content();
 
         return view('menu.details', [

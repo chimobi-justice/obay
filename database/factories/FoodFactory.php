@@ -14,7 +14,7 @@ class FoodFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(15),
+            'name' => $this->faker->sentence(15),
             'description' => $this->faker->sentence(80),
             'food_image' => public_Path('/images/pizza.jpeg'),
             'food_type' => 'bun',

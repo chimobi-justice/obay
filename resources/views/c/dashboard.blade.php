@@ -1,4 +1,4 @@
-<x-Dashboard.layout>
+<x-c.layout>
   <x-flash-message />
     <div class="content-text">
         <div class="">
@@ -20,7 +20,7 @@
               <a href="{{ route('c.dashboard.food.details', $food->id ) }}">
                 <img src="{{ asset('images/pizza.jpeg') }}" alt="" class="rounded-lg">
                 <div class="p-1">
-                  <h2 class="leading-5 mb-1 text-sm text-gray-500 font-semibold">{{ Str::limit($food->title, 20) }}</h2>
+                  <h2 class="leading-5 mb-1 text-sm text-gray-500 font-semibold">{{ Str::limit($food->name, 20) }}</h2>
                   <p class="text-sm text-gray-500">15 min</p>
                   <p class="text-xs text-gray-500">{{ $food->new_price }} free delivery</p>
                 </div>    
@@ -42,4 +42,4 @@
   </div>
   </div>
 
-</x-Dashboard.layout>
+</x-c.layout>

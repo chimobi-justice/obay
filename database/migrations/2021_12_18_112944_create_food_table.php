@@ -14,13 +14,13 @@ class CreateFoodTable extends Migration
     public function up()
     {
         Schema::create('food', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->contrained()->onDelete('cascade');
-            $table->string('title');
-            $table->text('description');
+            $table->uuid('id');
+            $table->foreignUuid('user_id')->contrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('slug');
+            $table->text('food_description');
             $table->string('food_image');
             $table->string('food_type');
-            $table->string('quantity');
             $table->decimal('old_price', 5, 2);
             $table->decimal('new_price', 5, 2);
             $table->timestamps();

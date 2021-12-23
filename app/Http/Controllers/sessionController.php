@@ -24,7 +24,11 @@ class sessionController extends Controller
 
         session()->regenerate();
 
-        return redirect()->route(RouteServiceProvider::C_DASHBOARD)->with('status', 'Welcome back');
+        if (auth()->check() && (auth()->user()->accountType === false)) {
+            return redirect()->route(RouteServiceProvider::C_DASHBOARD)->with('status', 'Welcome back');
+        }
+
+        return redirect()->route(RouteServiceProvider::M_DASHBOARD)->with('status', 'Welcome back');
     }
 
     public function destroy()

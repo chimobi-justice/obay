@@ -1,4 +1,4 @@
-<x-Dashboard.layout>
+<x-c.layout>
   <x-flash-message />
 
   @if ($carts->count())
@@ -11,7 +11,7 @@
                 <img src="{{ asset('images/pizza.jpeg') }}" alt="" class="w-8/12 rounded-lg">
               </div>
               <div>
-                <p class="text-gray-500">{{ Str::limit($cart->name,15, '') }}</p>
+                <p class="text-gray-500">{{ Str::limit($cart->name, 15) }}</p>
               </div>
               <div>
                 <form action="{{ route('c.dashboard.cart.remove', $cart->rowId) }}" method="POST">
@@ -66,4 +66,4 @@
       </div>    
   @endif
 
-</x-Dashboard.layout>
+</x-c.layout>

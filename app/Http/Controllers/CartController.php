@@ -8,6 +8,11 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['customerMiddleware', 'merchantMiddleware']);
+    }
+    
     public function index()
     {
         $carts = Cart::content();
@@ -21,8 +26,8 @@ class CartController extends Controller
         $food = Food::findOrFail($id);
 
         Cart::add(
-            $food->id, 
-            $food->title, 
+            $food->food_number, 
+            $food->name, 
             $request->input('quantity'),  
             $food->old_price,
             $food->new_price

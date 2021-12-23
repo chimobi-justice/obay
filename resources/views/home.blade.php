@@ -23,10 +23,12 @@
       <div class="w-10/12 m-auto grid grid-cols-5 gap-4 mb-3">
         @foreach ($foods as $food)
           <div class="food-holder-card">
-              <a href="{{ route('food.details', $food->id ) }}">
+              <a href="{{ route('food.details', 
+                                              ['id' => $food->id, 
+                                              'slug' => $food->slug ]) }}">
                 <img src="{{ asset('images/pizza.jpeg') }}" alt="" class="rounded-lg">
                 <div class="p-1">
-                  <h2 class="leading-5 mb-1 text-sm text-gray-500 font-semibold">{{ Str::limit($food->title, 20) }}</h2>
+                  <h2 class="leading-5 mb-1 text-sm text-gray-500 font-semibold">{{ Str::limit($food->name, 20) }}</h2>
                   <p class="text-sm text-gray-500">15 min</p>
                   <p class="text-xs text-gray-500">{{ $food->new_price }} free delivery</p>
                 </div>    
