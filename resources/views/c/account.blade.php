@@ -14,7 +14,7 @@
           @csrf
           @method('PUT')
 
-          <x-form.input type="text" name="name" id="name" placeholder="Enter your Name"  value="{{ auth()->user()->name ? auth()->user()->name : old('name') }}" />
+          <x-form.input type="text" name="name" id="name" placeholder="Enter your Name"  value="{{ auth()->user()->fullname ? auth()->user()->fullname : old('name') }}" />
           <x-form.input type="email" name="email" id="email" placeholder="Enter your Email"  value="{{ auth()->user()->email }}" disabled />
           <x-form.input type="text" name="country" id="country" placeholder="Enter your Country"  value="{{ auth()->user()->country ? auth()->user()->country : old('country') }}" />
           <x-form.input type="text" name="state" id="state" placeholder="Enter your State"  value="{{ auth()->user()->state ? auth()->user()->state : old('state') }}" />
@@ -29,10 +29,15 @@
               </div>
           @enderror
 
-          <!-- <div class="form-control pb-4">
-          <label for="avatar" id="upload">Upload</label>
-          <input type="file" name="avatar" id="avatar">
-        </div> -->
+          <div class="pb-4">
+            <label for="avatar" id="upload">Upload Avatar</label>
+            <input type="file" name="avatar" id="avatar">
+            @error('avatar')
+              <div class="text-red-500 text-sm">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
 
           <div class="pb-3">
             <x-form.button>Update Profile</x-form.button>

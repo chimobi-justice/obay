@@ -20,9 +20,18 @@
                 <div class="mobile_icon"></div>
             </div>
         </div>
-        <form action="" class="w-8/12">
+        <form action="" class="w-8/12 flex justify-around items-center">
+            <div class="w-10/12">
             <input type="text" name="search" id="search" placeholder="what would you like to eat today"
              class="border border-gray-200 p-2 mb-1 w-full rounded text-sm"/>
+            </div>
+            <div>
+                @if (auth()->user()->avatar)
+                  <img src="{{ auth()->user()->avatar }}" alt="" class="w-10">
+                @else
+                  <img src="{{ asset('images/avatar.jpeg') }}" alt="" class="w-10">
+                @endif
+            </div>
         </form>
     </nav>
 

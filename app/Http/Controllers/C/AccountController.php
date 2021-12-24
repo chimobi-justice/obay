@@ -20,7 +20,10 @@ class AccountController extends Controller
             'state' => 'required',
             'number' => 'required|numeric|min:11',
             'address' => 'required',
+            'avatar' => 'required'
         ]);
+
+        $uploadAvatar = cloudinary()->upload($request->file('food_image'))->getSecurePath();
 
         auth()->user()->update([
             'name' => $request->name,
@@ -29,6 +32,7 @@ class AccountController extends Controller
             'state' => $request->state,
             'number' => $request->number,
             'address' => $request->address,
+            'avatar' => $uploadAvatar
         ]);
 
         return back()->with('status', 'Profile updated successfully');

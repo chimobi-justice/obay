@@ -22,7 +22,6 @@
             <option value="">Choose Meal Type</option>
             <option value="breakfast">bun</option>
             <option value="lunch">french fries</option>
-            <option value="dinner">egg scotch</option>
             <option value="dinner">bread</option>
             <option value="dinner">pizza</option>
             <option value="dinner">rice</option>
@@ -65,7 +64,7 @@
           @enderror
         </div>
 
-        <div class="form-control pb-4">
+        <div class="pb-4">
           <label for="food_image" id="upload">Upload Food Image</label>
           <input type="file" name="food_image" id="food_image">
           @error('food_image')

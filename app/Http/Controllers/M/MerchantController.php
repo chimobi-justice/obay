@@ -22,7 +22,7 @@ class MerchantController extends Controller
     }
 
     public function store(Request $request)
-    {
+    {   
         $this->validate($request, [
             'name' => 'required',
             'old_price' => 'required|numeric',
@@ -33,9 +33,7 @@ class MerchantController extends Controller
             'food_image' => 'required|mimes:jpeg,jpg,png|max:5048',
         ]);
 
-        $imageToUpload = time() . '-' . $request->food_image->getClientOriginalName();
-
-        $request->food_image->move(public_path('food_images', $imageToUpload));
+        $imageToUpload = cloudinary()->upload($request->file('food_image'))->getSecurePath();
 
         auth()->user()->foods()->create([
             'name' => $request->name,
