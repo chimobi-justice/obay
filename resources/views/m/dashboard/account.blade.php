@@ -1,6 +1,38 @@
 <x-m.layout>
   <x-flash-message />
   <section class="profile-form-wrapper">
+  <div id="profile-form-wrapper" class="flex justify-around flex-col sm:flex-row p-3 space-x-2 items-start m-auto">
+      <div class="w-11/12 sm:w-6/12 mb-10 sm:mb-0">
+        <h2 class="text-gray-600 pb-2 text-2xl text-center sm:text-left font-semibold">Profile Information</h2>
+        <p class="text-gray-500 text-base text-center sm:text-left">Update your account's profile information</p>
+      </div>
+
+      <form action="{{ route('dashboard.account.store') }}" method="POST" 
+        enctype="multipart/form-data" class="p-4 bg-white rounded-lg w-11/12 
+        sm:w-2/5 md:w-11/12 lg:w-11/12"
+        >
+          @csrf
+          @method('PUT')
+
+          <x-form.input type="text" name="name" id="name" placeholder="Enter your Name"  value="{{ auth()->user()->fullname ? auth()->user()->fullname : old('name') }}" />
+          <x-form.input type="email" name="email" id="email" placeholder="Enter your Email"  value="{{ auth()->user()->email }}" disabled />
+
+          <div class="pb-4">
+            <label for="avatar" id="upload">Upload Avatar</label>
+            <input type="file" name="avatar" id="avatar">
+            @error('avatar')
+              <div class="text-red-500 text-sm">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
+
+          <div class="pb-3">
+            <x-form.button>Update Profile</x-form.button>
+          </div>
+      </form>
+    </div> 
+
     <div id="profile-form-wrapper" class="flex justify-around flex-col sm:flex-row p-3 space-x-2 items-start m-auto">
       <div class="w-11/12 sm:w-6/12 mb-10 sm:mb-0">
         <h2 class="text-gray-600 pb-2 text-2xl text-center sm:text-left font-semibold">Update your password</h2>

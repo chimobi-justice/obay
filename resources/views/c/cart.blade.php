@@ -5,10 +5,10 @@
     <div class="mt-20 mb-20">
       <h1 class="text-red-500 text-2xl font-bold w-11/12 m-auto">Your Cart</h1>
       @foreach ($carts as $cart)
-      <a href="{{ route('food.details', $cart->id ) }}">
+      <a href="{{ route('c.dashboard.food.details', $cart->id ) }}">
         <div class="w-11/12 grid grid-cols-4 m-auto mt-3 mb-3 p-2 items-center border-b-2 border-t-2 border-gray-600">
               <div>
-                <img src="{{ asset('images/pizza.jpeg') }}" alt="" class="w-8/12 rounded-lg">
+                <img src="{{ $cart->options[0] }}" alt="" class="w-8/12 rounded-lg">
               </div>
               <div>
                 <p class="text-gray-500">{{ Str::limit($cart->name, 15) }}</p>
@@ -45,9 +45,16 @@
           </div>
             
             <div class="flex justify-between">
-              <form action="{{ route('c.dashboard') }}" class="mt-5 ">
-                <x-form.button>Order & Checkout</x-form.button>
-              </form>
+              @if (auth()->user()->country == "" && auth()->user()->address == ""  && auth()->user()->state == ""  && auth()->user()->number == "") 
+                <form action="{{ route('c.dashboard') }}" class="mt-5 ">
+                  <button disabled="disabled" class="flex bg-red-200 uppercase font-semibold text-xs 
+                    text-white py-2 px-5 rounded-lg" style="cursor: not-allowed" title="Please continue your profile to checkout">Order & Checkout</button>
+                </form>
+              @else
+                <form action="{{ route('c.dashboard') }}" class="mt-5 ">
+                  <x-form.button>Order & Checkout</x-form.button>
+                </form>
+              @endif
 
               <form action="{{ route('c.dashboard.cart.empty') }}" method="POST" class="mt-5 ">
                 @csrf
@@ -62,7 +69,6 @@
         <div class="w-1/2 m-auto pb-5 mt-5">
           <img src="{{ asset('images/empty.svg') }}" alt="">
         </div>
-        <a href="" class="bg-red-500 uppercase font-semibold text-xs text-white py-2 px-5 rounded-lg hover:bg-red-600">Click here to add an item</a>
       </div>    
   @endif
 

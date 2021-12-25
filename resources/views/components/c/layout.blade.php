@@ -49,7 +49,7 @@
                     <li><a href="{{ route('c.dashboard.meals.bun') }}" class="p-3 hover:text-gray-600 text-gray-600 {{ request()->is('c/dashboard/meals/bun') ? 'text-red-500 hover:text-red-500' : '' }}">bun</a></li>
                 </ul>
             </li>
-                        
+            <li><a href="{{ route('c.dashboard.order') }}" class="hover:text-gray-500 text-gray-600 {{ request()->is('c/dashboard/orders') ? 'text-red-500 hover:text-red-500' : '' }}">Orders</a></li>           
             <li><a href="/c/dashboard/cart" class="hover:text-gray-500 text-gray-600 {{ request()->is('c/dashboard/cart') ? 'text-red-500 hover:text-red-500' : '' }}">@livewire('cart-counter') </a></li>
             <li><a href="/c/dashboard/account" class="hover:text-gray-500 text-gray-600 {{ request()->is('c/dashboard/account') ? 'text-red-500 hover:text-red-500' : '' }}">Account</a></li>
             <li>

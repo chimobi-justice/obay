@@ -21,9 +21,18 @@
                 <div class="mobile_icon"></div>
             </div>
         </div>
-        <form action="" class="w-8/12">
+        <form action="" class="w-8/12 flex justify-around items-center">
+            <div class="w-10/12">
             <input type="text" name="search" id="search" placeholder="what would you like to eat today"
              class="border border-gray-200 p-2 mb-1 w-full rounded text-sm"/>
+            </div>
+            <div>
+                @if (auth()->user()->avatar)
+                  <img src="{{ auth()->user()->avatar }}" alt="" class="w-9">
+                @else
+                  <img src="{{ asset('images/avatar.jpeg') }}" alt="" class="w-9">
+                @endif
+            </div>
         </form>
     </nav>
 
@@ -31,7 +40,8 @@
         <h1 class="text-center leading-7 mb-5 text-4xl text-gray-600 font-semibold pt-4"><a href="{{ route('c.dashboard') }}">Obay</h1>
         <ul>
             <li><a href="{{ route('dashboard.index') }}" class="hover:text-gray-500 text-gray-600 {{ request()->is('m/dashboard') ? 'text-red-500 hover:text-red-500' : '' }}">Home</a></li>
-            <li><a href="{{ route('dashboard.create') }}" class="hover:text-gray-500 text-gray-600 {{ request()->is('m/dashboard/create') ? 'text-red-500 hover:text-red-500' : '' }}">Create Meal</a></li>
+            <li><a href="{{ route('dashboard.create') }}" class="hover:text-gray-500 text-gray-600 {{ request()->is('m/dashboard/food/create') ? 'text-red-500 hover:text-red-500' : '' }}">Create Meal</a></li>
+            <li><a href="{{ route('dashboard.order') }}" class="hover:text-gray-500 text-gray-600 {{ request()->is('m/dashboard/orders') ? 'text-red-500 hover:text-red-500' : '' }}">Orders</a></li>
             <li><a href="/m/dashboard/account" class="hover:text-gray-500 text-gray-600 {{ request()->is('c/dashboard/account') ? 'text-red-500 hover:text-red-500' : '' }}">Account</a></li>
             <li>
                 <form action="{{ route('logout') }}" method="POST" class="inline">

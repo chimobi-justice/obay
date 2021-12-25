@@ -24,10 +24,11 @@ class DashboardController extends Controller
 
         Cart::add(
             $food->id, 
-            $food->title, 
-            $request->input('quantity'),  
-            $food->old_price,
-            $food->new_price
+            $food->name, 
+            $request->input('quantity'), 
+            $food->new_price,
+            0,
+            [$food->food_image] 
         );
 
         return back()->with('status', 'Added to cart');
@@ -35,6 +36,7 @@ class DashboardController extends Controller
 
     public function cart()
     {
+        
         $carts = Cart::content();
 
         return view('c.cart', [

@@ -38,7 +38,7 @@ class MerchantController extends Controller
         auth()->user()->foods()->create([
             'name' => $request->name,
             'old_price' => $request->old_price,
-            'new_price' => $request->new_price,
+            'new_price' => $request->new_price, 
             'food_type' => $request->food_type,
             'food_category' => $request->food_category,
             'food_description' => $request->food_description,
