@@ -12,6 +12,11 @@
     <title>Dashboard</title>
 </head>
 <body class="bg-pink-50">
+    @if (auth()->user()->country == "" && auth()->user()->address == ""  && auth()->user()->state == ""  && auth()->user()->number == "") 
+        <div class="text-center font-bold bg-green-400 text-sm text-white p-3">
+            <p>Please continue your profile to checkout</p>
+        </div>
+    @endif
     <nav class="flex justify-between p-3" id="nav">
         <div id="icon_container">
             <div id="mobile_menu" class="hamburger">

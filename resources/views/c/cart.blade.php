@@ -1,12 +1,6 @@
 <x-c.layout>
   <x-flash-message />
 
-  @if (auth()->user()->country == "" && auth()->user()->address == ""  && auth()->user()->state == ""  && auth()->user()->number == "") 
-      <div class="t font-bold bg-green-500 text-sm text-white p-3">
-        <p>Please continue your profile to checkout</p>
-      </div>
-  @endif
-
   @if ($carts->count())
     <div class="mt-20 mb-20">
       <h1 class="text-red-500 text-2xl font-bold w-11/12 m-auto">Your Cart</h1>
