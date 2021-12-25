@@ -12,6 +12,24 @@ class MerchantAccountController extends Controller
         return view('m.dashboard.account');
     }
 
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'avatar' => 'required'
+        ]);
+
+        $uploadAvatar = cloudinary()->upload($request->file('food_image'))->getSecurePath();
+
+        auth()->user()->update([
+            'name' => $request->name,
+            'email' => auth()->user()->email,
+            'avatar' => $uploadAvatar
+        ]);
+
+        return back()->with('status', 'Profile updated successfully');
+    }
+
     public function updateSettings(Request $request)
     {
         $this->validate($request, [

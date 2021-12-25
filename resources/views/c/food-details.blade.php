@@ -34,7 +34,7 @@
 
       <div class="w-11/12 m-auto pt-5 pb-5">
         <h2 class="text-2xl">Description</h2>
-        <p class="leading-7 text-sm text-gray-400 mb-2">{{ $food->description }}</p>
+        <p class="leading-7 text-sm text-gray-400 mb-2">{{ Str::limit($food->food_description, 100) }}</p>
       </div>
     </div>
   </section>

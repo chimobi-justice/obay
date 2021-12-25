@@ -6,6 +6,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MerchantRegisterController;
 use App\Http\Controllers\sessionController;
 use App\Http\Controllers\M\MerchantController;
+use App\Http\Controllers\M\MerchantOrderController;
+use App\Http\Controllers\C\CustomerOrderController;
 use App\Http\Controllers\M\MerchantAccountController; 
 use App\Http\Controllers\C\DashboardController;
 use App\Http\Controllers\C\AccountController;
@@ -79,6 +81,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/c/dashboard/meals/rice', [RiceController::class, 'index'])->name('c.dashboard.meals.rice');
     Route::get('/c/dashboard/meals/french-fries', [FrenchFriesController::class, 'index'])->name('c.dashboard.meals.french-fries');
     Route::get('/c/dashboard/meals/pizzas', [PizzaController::class, 'index'])->name('c.dashboard.meals.pizzas');
+    Route::get('c/dashboard/orders', [CustomerOrderController::class, 'order'])->name('c.dashboard.order');
     
     Route::get('/c/dashboard/account', [AccountController::class, 'index'])->name('c.dashboard.account');
     Route::put('/c/dashboard/account/store', [AccountController::class, 'store'])->name('c.dashboard.account.store');
@@ -88,17 +91,17 @@ Route::group(['middleware' => 'auth'], function() {
 // end routes for customer
 
 // routes for merchant
-// Route::resource('/m/dashboard', MerchantController::class)->middleware('auth');
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/m/dashboard', [MerchantController::class, 'index'])->name('dashboard.index');
     Route::get('m/dashboard/food/create', [MerchantController::class, 'create'])->name('dashboard.create');
+    Route::get('m/dashboard/orders', [MerchantOrderController::class, 'order'])->name('dashboard.order');
     Route::post('/m/dashboard/create', [MerchantController::class, 'store'])->name('dashboard.store');
     Route::get('/m/dashboard/{id}/{slug}', [MerchantController::class, 'show'])->name('dashboard.show');
     Route::delete('/m/dashboard/{food}', [MerchantController::class, 'destroy'])->name('dashboard.delete');
 
     Route::get('/m/dashboard/account', [MerchantAccountController::class, 'index'])->name('dashboard.account');
+    Route::put('/m/dashboard/account/store', [MerchantAccountController::class, 'store'])->name('dashboard.account.store');
     Route::delete('/m/dashboard/account/delete', [MerchantAccountController::class, 'destroy'])->name('dashboard.account.destroy');
     Route::put('/m/dashboard/account/settings', [MerchantAccountController::class, 'updateSettings'])->name('dashboard.account.settings');
-
 });
 // end routes for merchant

@@ -12,6 +12,11 @@
     <title>Dashboard</title>
 </head>
 <body class="bg-pink-50">
+    @if (auth()->user()->country == "" && auth()->user()->address == ""  && auth()->user()->state == ""  && auth()->user()->number == "") 
+        <div class="text-center font-bold bg-green-400 text-sm text-white p-3">
+            <p>Please continue your profile to checkout</p>
+        </div>
+    @endif
     <nav class="flex justify-between p-3" id="nav">
         <div id="icon_container">
             <div id="mobile_menu" class="hamburger">
@@ -49,7 +54,7 @@
                     <li><a href="{{ route('c.dashboard.meals.bun') }}" class="p-3 hover:text-gray-600 text-gray-600 {{ request()->is('c/dashboard/meals/bun') ? 'text-red-500 hover:text-red-500' : '' }}">bun</a></li>
                 </ul>
             </li>
-                        
+            <li><a href="{{ route('c.dashboard.order') }}" class="hover:text-gray-500 text-gray-600 {{ request()->is('c/dashboard/orders') ? 'text-red-500 hover:text-red-500' : '' }}">Orders</a></li>           
             <li><a href="/c/dashboard/cart" class="hover:text-gray-500 text-gray-600 {{ request()->is('c/dashboard/cart') ? 'text-red-500 hover:text-red-500' : '' }}">@livewire('cart-counter') </a></li>
             <li><a href="/c/dashboard/account" class="hover:text-gray-500 text-gray-600 {{ request()->is('c/dashboard/account') ? 'text-red-500 hover:text-red-500' : '' }}">Account</a></li>
             <li>
