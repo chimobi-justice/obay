@@ -10,7 +10,7 @@ class RiceController extends Controller
 {
     public function index()
     {
-         $mealsRice = Food::where('food_type', 'rice')->paginate(40);
+         $mealsRice = Food::where('food_category', 'rice')->paginate(40);
 
          return view('c.Meals.rice', [
              'mealsRice' => $mealsRice

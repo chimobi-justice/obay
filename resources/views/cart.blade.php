@@ -7,7 +7,7 @@
 
   @if ($carts->count())
     <div class="mt-20 mb-20">
-      @foreach ($carts as $cart)
+    @foreach ($carts as $cart)
       <a href="{{ route('food.details', $cart->id ) }}">
         <div class="w-8/12 grid grid-cols-4 m-auto mt-3 mb-3 p-2 items-center border-b-2 border-t-2 border-gray-600">
               <div>
@@ -29,21 +29,21 @@
                   <label for="quantity" class="text-gray-500 text-sm">quantity:</label>
                   <input type="number" name="quantity" value="{{ $cart->qty }}" min="0" max="5" class="text-sm py-1 px-1 w-10 mb-3">
                 </div>
-                <p class="text-gray-500 font-semibold">${{ $cart->total() }}</p>
+                <p class="text-gray-500 font-semibold">${{ $cart->subTotal() }}</p>
               </div>
           </div>
-        </a>
+        </a>t
         
       @endforeach
       <div class="mt-2 w-8/12 m-auto">
           <div class="flex justify-between mb-2">
               <h3 class="text-gray-500 font-bold">Subtotal:</h3>
-              <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::total()}}</p>
+              <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::subTotal()}}</p>
           </div>
 
           <div class="flex justify-between mb-2">
             <h3 class="text-gray-500 font-bold">Total:</h3>
-            <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::total()}}</p>
+            <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::subTotal()}}</p>
           </div>
             
           @auth

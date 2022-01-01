@@ -10,7 +10,7 @@ class BurgerController extends Controller
 {
     public function index()
     {
-         $mealsBurgers = Food::where('food_type', 'burger')->paginate(40);
+         $mealsBurgers = Food::where('food_category', 'burger')->paginate(40);
 
          return view('c.Meals.burger', [
              'mealsBurgers' => $mealsBurgers

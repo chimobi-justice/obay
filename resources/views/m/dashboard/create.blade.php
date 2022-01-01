@@ -10,10 +10,10 @@
         <x-form.input type="text" name="name" id="name" placeholder="Enter food name"  value="{{ auth()->user()->country ? auth()->user()->country : old('country') }}" />
         <div class="flex justify-between">
           <div class="w-1/2 mr-1">
-            <x-form.input type="text" name="old_price" id="old_price" placeholder="eg: 99.9"  value="{{ auth()->user()->old_price ? auth()->user()->old_price : old('old_price') }}" />
+            <x-form.input type="text" name="old_price" id="old_price" placeholder="eg: 150"  value="{{ auth()->user()->old_price ? auth()->user()->old_price : old('old_price') }}" />
           </div>
           <div class="w-1/2 ml-1">
-            <x-form.input type="text" name="new_price" id="new_price" placeholder="eg: 59.9"  value="{{ auth()->user()->new_price ? auth()->user()->new_price : old('new_price') }}" />
+            <x-form.input type="text" name="new_price" id="new_price" placeholder="eg: 100"  value="{{ auth()->user()->new_price ? auth()->user()->new_price : old('new_price') }}" />
           </div>
         </div>
         <div class="form-control mb-4 pl-1">

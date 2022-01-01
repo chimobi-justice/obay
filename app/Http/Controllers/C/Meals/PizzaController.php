@@ -10,7 +10,7 @@ class PizzaController extends Controller
 {
     public function index()
     {
-         $mealsPizza = Food::where('food_type', 'pizza')->paginate(40);
+         $mealsPizza = Food::where('food_category', 'pizza')->paginate(40);
 
          return view('c.Meals.pizza', [
              'mealsPizza' => $mealsPizza

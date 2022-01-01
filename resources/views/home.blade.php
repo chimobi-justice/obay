@@ -36,9 +36,6 @@
           </div>
         @endforeach
       </div>
-      <div class="w-10/12 m-auto">
-        {{ $foods }}
-      </div>
     @endif
   </div>
 

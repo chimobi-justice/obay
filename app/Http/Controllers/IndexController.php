@@ -14,7 +14,7 @@ class IndexController extends Controller
     
     public function index()
     { 
-       $foods = Food::latest()->paginate(20);
+       $foods = Food::latest()->limit(20)->get();
 
        return view('home', [
             'foods' => $foods

@@ -21,8 +21,8 @@ class CreateFoodTable extends Migration
             $table->text('food_description');
             $table->string('food_image');
             $table->string('food_type');
-            $table->decimal('old_price', 5, 2);
-            $table->decimal('new_price', 5, 2);
+            $table->decimal('old_price');
+            $table->decimal('new_price');
             $table->timestamps();
         });
     }

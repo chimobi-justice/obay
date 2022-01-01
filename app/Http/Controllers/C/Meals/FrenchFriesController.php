@@ -10,7 +10,7 @@ class FrenchFriesController extends Controller
 {
     public function index()
     {
-         $mealsFrenchFries = Food::where('food_type', 'french-fries')->paginate(40);
+         $mealsFrenchFries = Food::where('food_category', 'french-fries')->paginate(40);
 
          return view('c.Meals.french-fries', [
              'mealsFrenchFries' => $mealsFrenchFries

@@ -23,6 +23,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\Categories\BreakfastController;
 use App\Http\Controllers\Categories\DinnerController;
 use App\Http\Controllers\Categories\LunchController;
+use App\Http\Controllers\VerifyPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ use App\Http\Controllers\Categories\LunchController;
 Route::get('/', [IndexController::class, 'index']);
 
 Route::get('/our-menu', [MenuListView::class, 'index']);
-Route::get('/food/details/{id}/{slug}', [MenuListDetails::class, 'show'])->name('food.details');
+Route::get('/food/details/{id}', [MenuListDetails::class, 'show'])->name('food.details');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/food/details/{id}', [CartController::class, 'store'])->name('cart.store');
@@ -70,6 +71,9 @@ Route::post('/logout', [sessionController::class, 'destroy'])->name('logout')->m
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/c/dashboard', [DashboardController::class, 'index'])->name('c.dashboard');
     Route::get('/c/dashboard/cart', [DashboardController::class, 'cart'])->name('c.dashboard.cart');
+
+    Route::post('/verify-payment', [VerifyPaymentController::class, 'verify']);
+
     Route::get('/c/dashboard/food/details/{id}', [DashboardController::class, 'show'])->name('c.dashboard.food.details');
     Route::post('/c/dashboard/food/details/{id}', [DashboardController::class, 'store'])->name('c.dashboard.cart.store');
     Route::delete('/c/dashboard/cart/{id}', [DashboardController::class, 'destroy'])->name('c.dashboard.cart.remove');

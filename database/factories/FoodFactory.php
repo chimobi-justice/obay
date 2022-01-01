@@ -16,12 +16,12 @@ class FoodFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'slug' => $this->faker->slug(),
-            'food_description' => $this->faker->sentence(40),
+            'food_description' => $this->faker->sentence(200),
             'food_category' => 'bun',
-            'food_image' => public_Path('/images/pizza.jpeg'),
+            'food_image' => 'images/pizza.jpeg',
             'food_type' => 'breakfast',
-            'old_price' => 90.00,
-            'new_price' => 10.00
+            'old_price' => money_format(100, 2),
+            'new_price' => money_format(100, 2)
         ];
     }
 }
