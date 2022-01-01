@@ -26,14 +26,25 @@ class CartController extends Controller
         $food = Food::findOrFail($id);
 
         Cart::add(
-            $food->food_number, 
+            $food->id, 
             $food->name, 
-            $request->input('quantity'),  
-            $food->old_price,
-            $food->new_price
+            $request->input('quantity'), 
+            $food->new_price,
+            0,
+            [$food->food_image] 
         );
 
         return back()->with('status', 'Added to cart');
+    }
+
+    public function cart()
+    {
+        
+        $carts = Cart::content();
+
+        return view('cart', [
+            'carts' => $carts
+        ]);
     }
 
     public function empty()

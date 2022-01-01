@@ -10,7 +10,7 @@ class BunController extends Controller
 {
     public function index()
     {
-         $mealsBun = Food::where('food_type', 'bun')->paginate(40);
+         $mealsBun = Food::where('food_category', 'bun')->paginate(40);
 
          return view('c.Meals.bun', [
              'mealsBun' => $mealsBun

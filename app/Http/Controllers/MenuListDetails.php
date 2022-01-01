@@ -13,7 +13,7 @@ class MenuListDetails extends Controller
         $this->middleware(['customerMiddleware', 'merchantMiddleware']);
     }
     
-    public function show($id, $slug)
+    public function show($id)
     {
         $food = Food::findOrFail($id);
 

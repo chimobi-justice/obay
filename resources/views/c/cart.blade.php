@@ -26,22 +26,21 @@
                   <label for="quantity" class="text-gray-500 text-sm">quantity:</label>
                   <input type="number" name="quantity" value="{{ $cart->qty }}" min="0" max="5" class="text-sm py-1 px-1 w-10 mb-3">
                 </div>
-                <p class="text-gray-500 font-semibold">${{ $cart->total() }}</p>
+                <p class="text-gray-500 font-semibold">${{ $cart->subTotal() }}</p>
               </div>
           </div>
         </a>
         
       @endforeach
-      
       <div class="mt-2 w-11/12 m-auto">
           <div class="flex justify-between mb-2">
               <h3 class="text-gray-500 font-bold">Subtotal:</h3>
-              <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::total()}}</p>
+              <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::subTotal()}}</p>
           </div>
 
           <div class="flex justify-between mb-2">
             <h3 class="text-gray-500 font-bold">Total:</h3>
-            <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::total()}}</p>
+            <p class="text-green-600">${{ \Gloudemans\Shoppingcart\Facades\Cart::subTotal()}}</p>
           </div>
             
             <div class="flex justify-between">
@@ -51,8 +50,10 @@
                     text-white py-2 px-5 rounded-lg" style="cursor: not-allowed" title="Please continue your profile to checkout">Order & Checkout</button>
                 </form>
               @else
-                <form action="{{ route('c.dashboard') }}" class="mt-5 ">
-                  <x-form.button>Order & Checkout</x-form.button>
+                <form class="mt-5 ">
+                  @csrf
+                  <button type="button" onClick="makePayment()" class="flex bg-red-500 uppercase font-semibold text-xs 
+                    text-white py-2 px-5 rounded-lg">Order & Checkout</button>
                 </form>
               @endif
 
@@ -72,4 +73,45 @@
       </div>    
   @endif
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+
+  <script>
+    function makePayment() {
+      FlutterwaveCheckout({
+        public_key: "FLWPUBK_TEST-397da62d031960996f1abd61c00766a0-X",
+        tx_ref: "RX1_{{ substr(rand(0, time()), 0, 7) }}",
+        amount: {{\Gloudemans\Shoppingcart\Facades\Cart::subTotal()}},
+        currency: "USD",
+        country: "US",
+        payment_options: " ",
+        customer: {
+          email: '{{ auth()->user()->email }}',
+          phone_number: '{{ auth()->user()->number }}',
+          name: '{{ auth()->user()->fullname }}',
+        },
+        callback: function (data) {
+          var transaction_id = data.transaction_id;
+
+          var _token = $("input[name='_token']").val();
+
+          $.ajax({
+            type: 'POST',
+            url: "{{URL::to('/verify-payment')}}",
+            data: {
+              transaction_id,
+              _token
+            }, 
+            success: function(response) {
+              console.log(response);
+            }
+          });
+        },
+        customizations: {
+          title: "Obay Food App",
+          description: "Payment for items in cart",
+        },
+      });
+    }
+  </script>
 </x-c.layout>
